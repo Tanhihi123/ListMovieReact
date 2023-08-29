@@ -9,7 +9,6 @@ const Banner = () => {
     `https://api.themoviedb.org/3/movie/upcoming?api_key=9d4f7d890ff379705bfcdca8f46aec9d`,
     fetcher
   );
-  const navigate = useNavigate();
   const movies = data?.results || [];
   // console.log(movies);
   return (

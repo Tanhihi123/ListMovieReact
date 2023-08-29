@@ -1,8 +1,11 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import MovieList from "../components/movies/MovieList";
 import Banner from "../components/banner/Banner";
 
 const HomePage = () => {
+  useEffect(() => {
+    document.title = "Home Page";
+  },[]);
   return (
     <Fragment>
       <section className="movies-layout page-container pb-10">

@@ -24,6 +24,9 @@ const MoviePage = () => {
   const { data, error, isLoading } = useSWR(url, fetcher);
   // console.log(data);
   useEffect(() => {
+    document.title = "Movie Detail";
+  },[])
+  useEffect(() => {
     if (filterDebounce) {
       setUrl(
         `https://api.themoviedb.org/3/search/movie?api_key=9d4f7d890ff379705bfcdca8f46aec9d&query=${filterDebounce}&page=${swapPage}`

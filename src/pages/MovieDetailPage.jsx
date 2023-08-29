@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useSWR from "swr";
 import { fetcher } from "../config";
@@ -10,6 +10,9 @@ const MovieDetailPage = () => {
     `https://api.themoviedb.org/3/movie/${movieID}?api_key=9d4f7d890ff379705bfcdca8f46aec9d`,
     fetcher
   );
+  useEffect(() => {
+    document.title = "Movie Detail";
+  },[])
   if (!data) return null;
   const { backdrop_path, poster_path, title, genres, overview } = data;
   return (
